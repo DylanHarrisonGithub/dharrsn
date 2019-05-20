@@ -1,0 +1,15 @@
+<ul class="list-group">
+  <li *ngFor="let message of messages" class="list-group-item">
+    <p>Name: {{ message.name }}<a class="float-right fa fa-trash text-danger" (click)="deleteContactMessage(message.id)"></a></p>
+    <p>Email: {{ message.email }}</p>
+    <p>Message:</p>
+    <div class="container">
+      <p>{{ message.message }}</p>
+    </div>
+  </li>
+  <li *ngIf="!messages.length" class="list-group-item d-flex align-items-center">
+    <div class="text-center w-100">
+      There are no messages to display.
+    </div>
+  </li>
+</ul>

@@ -1,0 +1,32 @@
+<div class="container">
+  <h1 class="text-center">Contact</h1>
+  <hr/>
+  <div *ngIf="alerts.length && (contact.name || contact.email || contact.message)" class="pl-3 pr-3 alert alert-danger">
+    {{ alerts[0].message }}
+  </div>
+  <div class="row">
+    <div class="col-lg mt-1 mb-1">
+      <input class="form-control" type="text" placeholder="Name" 
+        [(ngModel)]="contact.name" 
+        (ngModelChange)="validate()" 
+        [ngClass]="{ 'is-invalid' : hasError('name') && (contact.name || contact.email || contact.message),
+                     'is-valid' : !hasError('name') && (contact.name || contact.email || contact.message) }"/>
+    </div>
+    <div class="col-lg mt-1 mb-1">
+      <input class="form-control" type="text" placeholder="Email" 
+        [(ngModel)]="contact.email" 
+        (ngModelChange)="validate()" 
+        [ngClass]="{ 'is-invalid' : hasError('email') && (contact.name || contact.email || contact.message),
+                     'is-valid' : !hasError('email') && (contact.name || contact.email || contact.message) }"/>
+    </div>
+    <div class="col-lg mt-1 mb-1">
+      <button class="btn btn-primary float-right" (click)="submit()" [disabled]="alerts.length || !(contact.name && contact.email && contact.message)">Submit</button>
+    </div>
+  </div>
+  <textarea class="form-control mt-3 mb-4" placeholder="Your message.." 
+    style="resize: none; height: 300px;" 
+    [(ngModel)]="contact.message" 
+    (ngModelChange)="validate()" 
+    [ngClass]="{ 'is-invalid' : hasError('message') && (contact.name || contact.email || contact.message),
+                 'is-valid' : !hasError('message') && (contact.name || contact.email || contact.message) }"></textarea>
+</div>

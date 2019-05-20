@@ -1,0 +1,105 @@
+<ul class="list-group">
+  <div *ngFor="let service of services; index as i">
+    <li class="list-group-item bg-light" [ngClass]="{ 'bg-light': !(i%2) }">
+      <div class="row">
+        <div class="col">
+          <app-service-item [service]="service" [flip]="!(i%2)"></app-service-item>
+        </div>
+        <div class="col-1 d-flex align-items-center">
+          <div class="text-center w-100">
+            <a class="float-right fa fa-trash text-danger p-2" (click)="deleteService(service.id)"></a>
+            <a class="float-right fa fa-pencil text-success p-2" (click)="editService(service.id)"></a>
+            <a class="float-right fa fa-caret-up text-primary p-2" (click)="moveServiceUp(service.id)"></a>
+            <a class="float-right fa fa-caret-down text-primary p-2" (click)="moveServiceDown(service.id)"></a>
+          </div>
+        </div>
+      </div>     
+    </li>
+    <li *ngIf="getEditingService(service.id)" class="list-group-item">
+      <div class="row">
+        <div class="col">
+          <h5 class="text-center"><input type="text" class="form-control" placeholder="Title.." [(ngModel)]="services[i].title" (ngModelChange)="validateService(services[i])"></h5>
+          <p class="text-secondary"><textarea style="resize: none; height: 128px;" type="text" class="form-control" placeholder="Text.." [(ngModel)]="services[i].text" (ngModelChange)="validateService(services[i])"></textarea></p>          
+        </div>
+        <div class="col d-flex align-items-center">
+          <div class="text-center w-100">
+            <p class="text-center">Icons</p>
+            <input class="form-control" [(ngModel)]="services[i].icons[0]" (ngModelChange)="validateService(services[i])">
+            <input class="form-control" [(ngModel)]="services[i].icons[1]" (ngModelChange)="validateService(services[i])">
+            <input class="form-control" [(ngModel)]="services[i].icons[2]" (ngModelChange)="validateService(services[i])">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col d-flex align-items-center">
+          <div class="text-center w-100">
+            <div *ngIf="services[i].errors.length && (services[i].title || services[i].text || services[i].icons[0] || services[i].icons[1] || services[i].icons[2])" class="pl-3 pr-3 mb-0 alert alert-danger float-left w-100">
+              {{ services[i].errors[0].message }}
+            </div>
+          </div>
+        </div>
+        <div class="col d-flex align-items-center">
+          <div class="text-center w-100">
+            <div>
+              <button class="btn btn-danger m-0" (click)="updateService(getEditingService(service.id));" [disabled]="services[i].errors.length || !(services[i].title && services[i].text)">Update</button>
+              <button class="btn btn-primary m-0 ml-2" (click)="cancelServiceUpdate(getEditingService(service.id))">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </div>
+  <li *ngIf="!services.length" class="list-group-item d-flex align-items-center">
+    <div class="text-center w-100">
+      There are no services to display.
+    </div>
+  </li>
+</ul>
+<ul class="list-group mt-4">
+  <li class="list-group-item bg-light">
+    <div class="row">
+      <div class="col">
+        <h5 class="text-center"><strong>{{ newService.title }}</strong></h5>
+        <p class="text-secondary">{{ newService.text }}</p>          
+      </div>
+      <div class="col d-flex align-items-center">
+        <div class="text-center w-100">
+          <i *ngFor="let icon of newService.icons" class="fa m-1" [ngClass]="icon" style="font-size: 48px; text-shadow: 1px 3px 6px black !important;"></i>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="list-group-item">
+    <div class="row">
+      <div class="col">
+        <h5 class="text-center"><input type="text" class="form-control" placeholder="Title.." [(ngModel)]="newService.title" (ngModelChange)="validateService(newService)"></h5>
+        <p class="text-secondary"><textarea style="resize: none; height: 128px;" type="text" class="form-control" placeholder="Text.." [(ngModel)]="newService.text" (ngModelChange)="validateService(newService)"></textarea></p>          
+      </div>
+      <div class="col d-flex align-items-center">
+        <div class="text-center w-100">
+          <p class="text-center">Icons</p>
+          <input class="form-control" [(ngModel)]="newService.icons[0]" (ngModelChange)="validateService(newService)">
+          <input class="form-control" [(ngModel)]="newService.icons[1]" (ngModelChange)="validateService(newService)">
+          <input class="form-control" [(ngModel)]="newService.icons[2]" (ngModelChange)="validateService(newService)">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col d-flex align-items-center">
+        <div class="text-center w-100">
+          <div *ngIf="newService.errors.length && (newService.title || newService.text || newService.icons[0] || newService.icons[1] || newService.icons[2])" class="pl-3 pr-3 mb-0 alert alert-danger float-left w-100">
+            {{ newService.errors[0].message }}
+          </div>
+        </div>
+      </div>
+      <div class="col d-flex align-items-center">
+        <div class="text-center w-100">
+          <div>
+            <button class="btn btn-danger m-0" (click)="createService();" [disabled]="newService.errors.length || !(newService.title && newService.text)">Create</button>
+            <button class="btn btn-primary m-0 ml-2" (click)="clearService(newService)">Clear</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>

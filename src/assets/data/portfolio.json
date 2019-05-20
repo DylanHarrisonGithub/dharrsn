@@ -1,0 +1,186 @@
+[
+  { 
+    "id": 1,
+    "place": 1,
+    "title": "rpgparty (current)",
+    "technologies": "mongodb, express, angular, node (mean stack)",
+    "screenshotSrc": "rpgparty.png",
+    "bullets": [
+      "Online D&D-like multiplayer role playing game for small groups.",
+      "Create your own adventure with game map and quest editors.",
+      "Custom isometric tile rendering engine."
+    ], 
+    "links": { 
+      "source": "https://github.com/DylanHarrisonGithub/rpgParty"
+    }
+  },
+  { 
+    "id": 2,
+    "place": 2,
+    "title": "mathtalk",
+    "technologies": "mongodb, express, angular, node (mean stack)",
+    "screenshotSrc": "mathtalk.png",
+    "bullets": [
+      "Web-based forum application deployed on Heroku.",
+      "Create and reply to posts with integrated LaTeX typesetting.",
+      "User registration, login/logout, JWT authentication.",
+      "Query filter, infinite wall effect."
+    ], 
+    "links": { 
+      "source": "https://github.com/DylanHarrisonGithub/MathTalk",
+      "website": "https://protected-fortress-22053.herokuapp.com/" 
+    }
+  },
+  { 
+    "id": 3,
+    "place": 3,
+    "title": "passman",
+    "technologies": "c#, .net",
+    "screenshotSrc": "passman.png",
+    "bullets": [
+      "Windows password manager application.",
+      "Custom RSA-like encryption algorithm based on Fermat's little theorem."
+    ], 
+    "links": { 
+      "source": "https://github.com/DylanHarrisonGithub/PassMan", 
+      "blog": "https://dylansamcsblog.wordpress.com/2017/08/30/simple-encryption-in-c/"
+    }
+  },
+  { 
+    "id": 4,
+    "place": 4,
+    "title": "SyllabusCreator",
+    "technologies": "Google App Engine, Python, HTML",
+    "screenshotSrc": "syllabus.jpg",
+    "bullets": [
+      "Contributed course calendar and webscraper modules.",
+      "Worked with Agile, Scrum team framework.",
+      "Provided deliverable code in incremental project development sprints."
+    ], 
+    "links": { 
+      "source": "https://github.com/koszuta/CS361"
+    }
+  },
+  { 
+    "id": 5,
+    "place": 5,
+    "title": "ReactWeatherApp",
+    "technologies": "React, HTML",
+    "screenshotSrc": "reactweatherapp.png",
+    "bullets": [
+      "Get Weather by zip code via OpenWeatherMap API.",
+      "Get area map via Google Maps API."
+    ], 
+    "links": { 
+      "source": "https://github.com/DylanHarrisonGithub/react-weather-app"
+    }
+  },
+  { 
+    "id": 6,
+    "place": 6,
+    "title": "sinapprox",
+    "technologies": "C++, SIMD Intrinsics, Matlab/Octave",
+    "screenshotSrc": "sinapprox.jpg",
+    "bullets": [
+      "Continuous least squares polynomial approximation of sine function derived in Matlab/Octave.",
+      "Measure accuracy and performance of C++ and SIMD Intrinsics implementations of Horner's Method."
+    ], 
+    "links": { 
+      "source": "https://github.com/DylanHarrisonGithub/SinApprox", 
+      "blog": "https://dylansamcsblog.wordpress.com/2017/03/11/code-optimization-computer-brains-vs-people-brains/"
+    }
+  },
+  { 
+    "id": 7,
+    "place": 7,
+    "title": "playbilliards",
+    "technologies": "Google App Engine, Python, JavaScript, Jquery",
+    "screenshotSrc": "playbilliards.png",
+    "bullets": [
+      "Two player game of pool deployed on Google App Engine.",
+      "Client-side animation in HTML5 Canvas and JavaScript.",
+      "Server-side collision physics engine in Python."
+    ], 
+    "links": { 
+      "source": "https://github.com/DylanHarrisonGithub/CSfinalProj", 
+      "blog": "https://dylansamcsblog.wordpress.com/2017/04/15/various-2d-game-and-physics-derivations/", 
+      "website": "http://our-mediator-166519.appspot.com/" 
+    }
+  },
+
+  { 
+    "id": 8,
+    "place": 8,
+    "title": "seurat",
+    "technologies": "C#, .NET",
+    "screenshotSrc": "seurat.jpg",
+    "bullets": [
+      "Windows Drawing Application.",
+      "Supports Multiple Image Formats. .bmp, .gif, etc.",
+      "Multiple Drawing Tools. Pencil, Curve, Bucket, etc.",
+      "Image zoom and pan, transparancy and layers."
+    ], 
+    "links": { 
+      "source": "https://github.com/DylanHarrisonGithub/Seurat"
+    }
+  },
+  { 
+    "id": 9,
+    "place": 9,
+    "title": "tuple generator",
+    "technologies": "java",
+    "screenshotSrc": "tuplegenerator.png",
+    "bullets": [
+      "Recursive algorithm to count over n-tuples.",
+      "Direct mapping of natural number to n-tuple and inverse.",
+      "Solve multivariate Diophantine equations by brute-force."
+    ], 
+    "links": { 
+      "source": "https://github.com/DylanHarrisonGithub/TupleGenerator", 
+      "blog": "https://dylansamcsblog.wordpress.com/2017/01/09/counting-in-n-dimensions/"
+    }
+  },
+  { 
+    "id": 10,
+    "place": 10,
+    "title": "bresenham lines",
+    "technologies": "C#, .NET",
+    "screenshotSrc": "bresenham.jpg",
+    "bullets": [
+      "C# implementation of bresenham line drawing algorithm."
+    ], 
+    "links": { 
+      "source": "https://github.com/DylanHarrisonGithub/BresenhamLines", 
+      "blog": "https://dylansamcsblog.wordpress.com/2017/01/19/why-does-bresenhams-line-drawing-algorithm-work/"
+    }
+  },
+  { 
+    "id": 11,
+    "place": 11,
+    "title": "tree visualizer",
+    "technologies": "python",
+    "screenshotSrc": "avltree.jpg",
+    "bullets": [
+      "Python Binary and AVL Tree implementation.",
+      "Output tree to visual representation."
+    ], 
+    "links": { 
+      "source": "https://github.com/DylanHarrisonGithub/AVLTree", 
+      "blog": "https://dylansamcsblog.wordpress.com/2017/02/07/binary-and-avl-search-trees/"
+    }
+  },
+  { 
+    "id": 12,
+    "place": 12,
+    "title": "Mandelbrot Viewer",
+    "technologies": "Java",
+    "screenshotSrc": "mandelbrotviewer.png",
+    "bullets": [
+      "Zoom, Pan, and Rotate.",
+      "Custom Complex number class."
+    ], 
+    "links": { 
+      "source": "https://github.com/DylanHarrisonGithub/MandelbrotViewer"
+    }
+  }
+]

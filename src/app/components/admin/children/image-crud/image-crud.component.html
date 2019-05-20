@@ -1,0 +1,21 @@
+<li class="list-group-item" *ngIf="loading" style="height: 200px;">
+  <div class="text-center">
+    <ngx-spinner
+      bdColor="rgba(0,0,0,0)"
+      size="medium"
+      color="#f00"
+      type="ball-scale-multiple"
+      [fullScreen]="false">
+    </ngx-spinner>
+    <p style="font-size: 20px;">Loading...</p>
+  </div>
+</li>
+<div class="mx-auto">
+  <div *ngFor="let src of portfolioImgList">
+    <app-img-gallery-card [src]="assetPath+src" [title]="src" [f]="deletePortfolioImg"></app-img-gallery-card>
+  </div>
+</div>
+<br style="clear:both"/>
+<h4>Upload..</h4>
+<hr/>
+<input type="file" (change)="onFileChange($event.target.files)">

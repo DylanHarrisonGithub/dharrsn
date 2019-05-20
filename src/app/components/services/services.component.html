@@ -1,0 +1,19 @@
+<h1 class="text-center">Services</h1>
+<hr/>
+<ul class="list-group">
+  <li class="list-group-item" *ngIf="loading" style="height: 200px;">
+    <div class="text-center">
+      <ngx-spinner
+        bdColor="rgba(0,0,0,0)"
+        size="medium"
+        color="#f00"
+        type="ball-scale-multiple"
+        [fullScreen]="false">
+      </ngx-spinner>
+      <p style="font-size: 20px;">Loading...</p>
+    </div>
+  </li>
+  <li *ngFor="let service of services; index as i" class="list-group-item" [ngClass]="{ 'bg-light': !(i%2) }">
+    <app-service-item [service]="service" [flip]="!(i%2)"></app-service-item>
+  </li>
+</ul>

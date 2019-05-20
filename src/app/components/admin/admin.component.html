@@ -1,0 +1,38 @@
+<h1 class="text-center">Admin</h1>
+<hr/>
+<div class="container">
+
+  <h5>Messages:
+    <a *ngIf="showMessages" class="float-right fa fa-caret-down" (click)="showMessages = !showMessages"></a>
+    <a *ngIf="!showMessages" class="float-right fa fa-caret-left" (click)="showMessages = !showMessages"></a>
+  </h5>
+  <app-contact-crud *ngIf="showMessages"></app-contact-crud>
+
+  <hr/>
+  <h5>Services:
+    <a *ngIf="showServices" class="float-right fa fa-caret-down" (click)="showServices = !showServices"></a>
+    <a *ngIf="!showServices" class="float-right fa fa-caret-left" (click)="showServices = !showServices"></a>
+  </h5>
+  <app-service-crud *ngIf="showServices"></app-service-crud>
+
+  <hr/>
+  <h5>Portfolio:
+    <a *ngIf="showPortfolio" class="float-right fa fa-caret-down" (click)="showPortfolio = !showPortfolio"></a>
+    <a *ngIf="!showPortfolio" class="float-right fa fa-caret-left" (click)="showPortfolio = !showPortfolio"></a>
+  </h5>
+  <app-portfolio-crud *ngIf="showPortfolio"></app-portfolio-crud>
+
+  <hr/>
+  <h5>Blog:
+    <a *ngIf="showBlog" class="float-right fa fa-caret-down" (click)="showBlog = !showBlog"></a>
+    <a *ngIf="!showBlog" class="float-right fa fa-caret-left" (click)="showBlog = !showBlog"></a>
+  </h5>
+
+  <hr/>
+  <h5>Images:
+    <a *ngIf="showImages" class="float-right fa fa-caret-down" (click)="showImages = !showImages"></a>
+    <a *ngIf="!showImages" class="float-right fa fa-caret-left" (click)="showImages = !showImages"></a>
+  </h5>
+  <app-image-crud *ngIf="showImages"></app-image-crud>
+</div>
+

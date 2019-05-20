@@ -1,0 +1,35 @@
+.app-card-div {
+  margin: 5px 5px 10px 5px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,.2);
+  padding: 20px;
+  overflow: auto;
+}
+
+.app-card-div:hover {
+  background-color: rgb(250,250,255) !important;
+  box-shadow: 5px 5px 5px rgba(0,0,0,.25);
+}
+
+.left-col {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.right-col {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 800px) {
+  .left-col {
+    width: 38%;
+    float: left;
+  }
+  .right-col {
+    width: 62%;
+    float: right;
+  }
+}

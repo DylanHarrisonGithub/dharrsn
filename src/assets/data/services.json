@@ -1,0 +1,55 @@
+[
+  {
+    "title": "Responsive Design",
+    "text": "Modern layouts for desktop, tablet, and mobile devices.",
+    "icons": [
+      "fa-desktop",
+      "fa-tablet",
+      "fa-mobile"
+    ]
+  },
+  {
+    "title": "Security",
+    "text": "Login, logout, and protect sensitive routes with token based authentication systems.",
+    "icons": [
+      "fa-key", 
+      "fa-lock"
+    ]
+  },
+  {
+    "title": "Reactive Forms",
+    "text": "Give users custom feedback in real-time so they know the right way to fill out your forms.",
+    "icons": [
+      "fa-tasks",
+      "fa-check"
+    ]
+  },
+  {
+    "title": "Admin Panel",
+    "text": "Manage your website's content and users, and access vital statistics and logs.",
+    "icons": [
+      "fa-cogs"
+    ]
+  },
+  {
+    "title": "Blogging",
+    "text": "Create, read, update, and delete posts with your own custom tailored blogging system.",
+    "icons": [
+      "fa-pencil"
+    ]
+  },
+  {
+    "title": "Social Media",
+    "text": "Let your users generate their own content, interact on forums, and manage their own profiles.",
+    "icons": [
+      "fa-comments"
+    ]
+  },
+  {
+    "title": "E-Commerce",
+    "text": "Run your business online with paypal integration.",
+    "icons": [
+      "fa-money"
+    ]
+  }
+]

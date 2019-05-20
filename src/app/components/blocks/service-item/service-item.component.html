@@ -1,0 +1,26 @@
+<div *ngIf="!flip">
+  <div class="row">
+    <div class="col d-flex align-items-center">
+      <div class="text-center w-100">
+        <i *ngFor="let icon of service.icons" class="fa m-1" [ngClass]="icon"></i>
+      </div>
+    </div>
+    <div class="col">
+      <h5 class="text-center"><strong>{{ service.title }}</strong></h5>
+      <p class="text-secondary">{{ service.text }}</p>          
+    </div>      
+  </div>
+</div>
+<div *ngIf="flip">
+  <div class="row">
+    <div class="col">
+      <h5 class="text-center"><strong>{{ service.title }}</strong></h5>
+      <p class="text-secondary">{{ service.text }}</p>          
+    </div>
+    <div class="col d-flex align-items-center">
+      <div class="text-center w-100">
+        <i *ngFor="let icon of service.icons" class="fa m-1" [ngClass]="icon"></i>
+      </div>
+    </div>
+  </div>
+</div>

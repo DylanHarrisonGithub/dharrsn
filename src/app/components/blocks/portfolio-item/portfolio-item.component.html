@@ -1,0 +1,29 @@
+<div>
+  <div class="row">
+    <div class="col-4 d-flex align-items-center wide-screen">
+      <div class="text-center w-100 pb-0">
+        <img class="portfolio-card-img" [src]="assetPath + portfolioItem.screenshotSrc" (click)="viewImg(assetPath + portfolioItem.screenshotSrc)" alt="Missing Image"/>
+        <h4 class="text-center">
+          <a *ngIf="portfolioItem.links.source" class="fa fa-github ml-3 mr-3 mt-3 mb-0 pb-0" [href]="portfolioItem.links.source"></a>
+          <a *ngIf="portfolioItem.links.blog" class="fa fa-wordpress ml-3 mr-3 mt-3 mb-0 pb-0" [href]="portfolioItem.links.blog"></a>
+          <a *ngIf="portfolioItem.links.website" class="fa fa-globe ml-3 mr-3 mt-3 mb-0 pb-0" [href]="portfolioItem.links.website"></a>
+        </h4>
+      </div>
+    </div>
+
+    <div class="col">
+      <h3 class="text-center"><strong>{{ portfolioItem.title }}</strong></h3>
+      <p class="text-center"><small class="text-secondary">{{ portfolioItem.technologies }}</small></p>
+      <img class="portfolio-card-img narrow-screen" [src]="assetPath + portfolioItem.screenshotSrc" (click)="viewImg(assetPath + portfolioItem.screenshotSrc)" alt="Missing Image"/>
+      <ul class="portfolio-bullets">
+        <li *ngFor="let bullet of portfolioItem.bullets">{{ bullet }}</li>
+      </ul>    
+    </div>
+  </div>
+
+  <h4 class="text-center narrow-screen">
+    <a *ngIf="portfolioItem.links.source" class="fa fa-github m-3" [href]="portfolioItem.links.source"></a>
+    <a *ngIf="portfolioItem.links.blog" class="fa fa-wordpress m-3" [href]="portfolioItem.links.blog"></a>
+    <a *ngIf="portfolioItem.links.website" class="fa fa-globe m-3" [href]="portfolioItem.links.website"></a>
+  </h4>
+</div>

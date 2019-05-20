@@ -1,0 +1,125 @@
+<li class="list-group-item">
+
+    <div class="row">
+  
+      <div class="col-4 wide-screen">
+        <div class="v-center">
+          <select class="custom-select mt-1"
+            [(ngModel)]="portfolioItem.screenshotSrc"
+            (ngModelChange)="validate()"
+            [ngClass]="{ 'is-invalid' : hasError('screenshotSrc') && !formIsClear() }">
+            <option *ngFor="let src of images" [ngValue]="src">{{ src }}</option>
+          </select>
+          <ul class="list-group mt-3">
+            <li class="list-group-item p-0">
+              <input type="text" class="form-control" placeholder="Source.."
+              [(ngModel)]="portfolioItem.links.source"
+              (ngModelChange)="validate()"
+              [ngClass]="{ 'is-invalid' : hasError('source') && !formIsClear(),
+                          'is-valid' : !hasError('source') && !formIsClear() }">
+            </li>
+            <li class="list-group-item p-0">
+              <input type="text" class="form-control" placeholder="Blog.."
+              [(ngModel)]="portfolioItem.links.blog"
+              (ngModelChange)="validate()"
+              [ngClass]="{ 'is-invalid' : hasError('blog') && !formIsClear(),
+                          'is-valid' : !hasError('blog') && !formIsClear() }">
+            </li>
+            <li class="list-group-item p-0">
+              <input type="text" class="form-control" placeholder="Website.."
+              [(ngModel)]="portfolioItem.links.website"
+              (ngModelChange)="validate()"
+              [ngClass]="{ 'is-invalid' : hasError('website') && !formIsClear(),
+                          'is-valid' : !hasError('website') && !formIsClear() }">
+            </li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="col">
+
+        <input type="text" class="form-control" placeholder="Title" 
+          [(ngModel)]="portfolioItem.title"
+          (ngModelChange)="validate()"
+          [ngClass]="{ 'is-invalid' : hasError('title') && !formIsClear(),
+                        'is-valid' : !hasError('title') && !formIsClear() }">
+
+          <input type="text" class="form-control" placeholder="Technologies" 
+            [(ngModel)]="portfolioItem.technologies"
+            (ngModelChange)="validate()"
+            [ngClass]="{ 'is-invalid' : hasError('technologies') && !formIsClear(),
+                          'is-valid' : !hasError('technologies') && !formIsClear() }">
+
+          <select class="form-control mt-1 narrow-screen"
+            [(ngModel)]="portfolioItem.screenshotSrc"
+            (ngModelChange)="validate()"
+            [ngClass]="{ 'is-invalid' : hasError('screenshotSrc') && !formIsClear() }">
+            <option *ngFor="let src of images" [ngValue]="src">{{ src }}</option>
+          </select>
+
+        <ul class="portfolio-bullets">
+          <li *ngFor="let bullet of portfolioItem.bullets; let i = index; trackBy:bulletsTrackByFn" class="list-group-item p-0">
+            <div class="row">
+              <div class="col-10">
+                <input type="text" class="form-control" placeholder="Bullet.."
+                [(ngModel)]="portfolioItem.bullets[i]"
+                (ngModelChange)="validate()"
+                [ngClass]="{ 'is-invalid' : hasError('bullets') && !formIsClear(),
+                            'is-valid' : !hasError('bullets') && !formIsClear() }">
+              </div>
+              <div class="col">
+                <a class="fa fa-trash text-danger" (click)="portfolioItem.bullets.splice(i,1);"></a>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item p-0"><button class="btn btn-primary btn-block" (click)="portfolioItem.bullets.push('')">New Bullet</button></li>
+        </ul>    
+      </div>
+  
+    </div>
+  
+    <h4 class="text-center narrow-screen">
+      <ul class="list-group mt-3">
+        <li class="list-group-item p-0">
+          <input type="text" class="form-control" placeholder="Source.."
+          [(ngModel)]="portfolioItem.links.source"
+          (ngModelChange)="validate()"
+          [ngClass]="{ 'is-invalid' : hasError('source') && !formIsClear(),
+                      'is-valid' : !hasError('source') && !formIsClear() }">
+        </li>
+        <li class="list-group-item p-0">
+          <input type="text" class="form-control" placeholder="Blog.."
+          [(ngModel)]="portfolioItem.links.blog"
+          (ngModelChange)="validate()"
+          [ngClass]="{ 'is-invalid' : hasError('blog') && !formIsClear(),
+                      'is-valid' : !hasError('blog') && !formIsClear() }">
+        </li>
+        <li class="list-group-item p-0">
+          <input type="text" class="form-control" placeholder="Website.."
+          [(ngModel)]="portfolioItem.links.website"
+          (ngModelChange)="validate()"
+          [ngClass]="{ 'is-invalid' : hasError('website') && !formIsClear(),
+                      'is-valid' : !hasError('website') && !formIsClear() }">
+        </li>
+      </ul>
+    </h4>
+
+    <div class="row">
+      <div class="col d-flex align-items-center">
+        <div class="text-center w-100">
+          <div *ngIf="errors.length && !formIsClear()" class="pl-3 pr-3 mb-0 alert alert-danger float-left w-100">
+            {{ errors[0].message }}
+          </div>
+        </div>
+      </div>
+      <div class="col d-flex align-items-center">
+        <div class="text-center w-100">
+          <div>
+            <button class="btn btn-danger m-0" (click)="buttons.submit.f(portfolioItem)" [disabled]="errors.length">{{ buttons.submit.title }}</button>
+            <button class="btn btn-primary m-0 ml-2" (click)="buttons.cancel.f(portfolioItem)">{{ buttons.cancel.title }}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </li>

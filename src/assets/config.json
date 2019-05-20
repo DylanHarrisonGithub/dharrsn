@@ -1,0 +1,13 @@
+{
+  "ENVIRONMENT": "DEVELOPMENT",
+  "URI": {
+    "DEVELOPMENT": "http://localhost:80/angular/dharrsn/server/",
+    "LAN": "http://192.168.1.68:80/angular/dharrsn/server/",
+    "DEPLOY": "server/"
+  },
+  "ASSETS": {
+    "DEVELOPMENT": "http://localhost:80/angular/dharrsn/server/assets/",
+    "LAN": "http://localhost:80/angular/dharrsn/server/assets/",
+    "DEPLOY": "server/assets/"
+  }
+}
